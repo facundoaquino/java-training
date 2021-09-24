@@ -16,6 +16,8 @@ import PaqueteLectura.Lector;
  * @author facun
  */
 public class Practica_SegundaParte_4 {
+    //como hago para evitar que se imprima null y de error en tal caso (solucionado pero como se haria)
+    // porque me pide que este inicializado turno cuando lo esta dentro del while ?????
 
     public static void main(String[] args) {
         Persona[][] castings = new Persona[5][8];
@@ -25,6 +27,7 @@ public class Practica_SegundaParte_4 {
         System.out.println("Ingrese nombre , con ZZZ se sale del programa");
         nombre = Lector.leerString();
         dia = 0;
+        turno = 0;
         while (!nombre.equals("ZZZ") && (dia < 5)) {
             turno = 0;
 
@@ -39,6 +42,13 @@ public class Practica_SegundaParte_4 {
                 turno++;
             }
             dia++;
+        }
+
+        for (int i = 0; i < dia; i++) {
+            for (int j = 0; j < turno; j++) {
+                System.out.println("el dia " + (i + 1) + " se entrevistara a " + castings[i][j].getNombre() + " en el turno : " + (j + 1));
+            }
+
         }
 
     }
