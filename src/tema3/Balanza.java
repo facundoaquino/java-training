@@ -13,14 +13,20 @@ public class Balanza {
 
     private double montoTotal;
     private int cantidadProductos;
+    private String resumen;
 
     public void iniciarCompra() {
         montoTotal = 0;
         cantidadProductos = 0;
+        resumen = "";
     }
 
-    public void registrarProducto(double pesoEnKg, double precioPorKg) {
-        montoTotal = montoTotal + (pesoEnKg * precioPorKg);
+    public void registrarProducto(Producto producto, double precioPorKg) {
+        // montoTotal = montoTotal + (pesoEnKg * precioPorKg);
+        double montoPorProducto = (producto.getPesoEnKg() * precioPorKg);
+        montoTotal = montoTotal + montoPorProducto;
+
+        resumen = resumen + producto.getDescripcion() + " " + montoPorProducto + " pesos" + " - ";
         cantidadProductos++;
     }
 
@@ -29,7 +35,7 @@ public class Balanza {
     }
 
     public String devolverResumenDeCompra() {
-        String aux = "Total a pagar " + montoTotal + " por la compra de  " + cantidadProductos + " productos ";
+        String aux = resumen + " Total a pagar " + montoTotal + " por la compra de  " + cantidadProductos + " productos ";
 
         return aux;
 

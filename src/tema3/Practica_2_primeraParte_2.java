@@ -18,16 +18,22 @@ public class Practica_2_primeraParte_2 {
         balanza.iniciarCompra();
         double pesoItem;
         double precioPorKilo;
+        Producto producto = new Producto();
 
+        System.out.println("ingrese descipcion del produccto");
+        producto.setDescripcion(Lector.leerString());
         System.out.println("ingrese el peso de el o los items");
         pesoItem = Lector.leerDouble();
         System.out.println("ingrese el precio por kilo del item");
         precioPorKilo = Lector.leerDouble();
         while (pesoItem != 0) {
-            balanza.registrarProducto(pesoItem, precioPorKilo);
+            producto.setPesoEnKg(pesoItem);
+            balanza.registrarProducto(producto, precioPorKilo);
             System.out.println("ingrese el peso de el o los items");
             pesoItem = Lector.leerDouble();
             if (pesoItem != 0) {
+                System.out.println("ingrese descipcion del produccto");
+                producto.setDescripcion(Lector.leerString());
                 System.out.println("ingrese el precio por kilo del item");
                 precioPorKilo = Lector.leerDouble();
             }
