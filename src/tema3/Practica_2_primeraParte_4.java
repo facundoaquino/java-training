@@ -16,7 +16,7 @@ public class Practica_2_primeraParte_4 {
     public static void main(String[] args) {
         Circulo circulo = new Circulo();
 
-        circulo.setColorLinea("rojo");
+        circulo.setColorLinea("rojooo");
         circulo.setColorRelleno("amarillo");
         System.out.println("ingrese el radio del circulo para calcular area y perimetro ");
         circulo.setRadio(Lector.leerDouble());
