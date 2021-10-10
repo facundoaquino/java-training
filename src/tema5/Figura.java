@@ -14,7 +14,7 @@ public abstract class Figura {
         setColorRelleno(unCR);
         setColorLinea(unCL);
     }
-    
+    @Override
     public String toString(){
         String aux = "Area: " + this.calcularArea() +
                      " CR: "  + getColorRelleno() + 
